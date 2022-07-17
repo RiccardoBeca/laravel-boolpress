@@ -12,6 +12,14 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
+// importo anche i vari componenti per poterli usare nel router
+
+import HomeComp from './components/pages/HomeComp';
+import AboutComp from './components/pages/AboutComp';
+import BlogComp from './components/pages/BlogComp';
+import ContactsComp from './components/pages/ContactsComp';
+
+
 // creiamo il router
 
 const router = new VueRouter({
@@ -21,8 +29,23 @@ const router = new VueRouter({
       {
           path: '/',
           name: 'home',
-          component: ''
-      }
+          component: HomeComp,
+      },
+      {
+        path: '/chi-siamo',
+        name: 'about',
+        component: AboutComp,
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        component: BlogComp,
+      },
+      {
+        path: '/contatti',
+        name: 'contacts',
+        component: ContactsComp,
+      },
     ]
 });
 

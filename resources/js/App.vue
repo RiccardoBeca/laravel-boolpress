@@ -1,19 +1,16 @@
 <template>
 <div>
   <HeaderComp />
-  <div class="container">
-    <h1>ciao vue</h1>
-    <ul>
-      <li v-for="post in posts"
-      :key="post.id">
-        <p>{{ post.title }}</p>
-        <p>{{ post.content }}</p>
-      </li>
-    </ul>
-  </div>
+ 
+  <!-- con router view vado ad innestare tutte le pagine -->
+  <main>
+
+    <router-view></router-view>
+
+  </main>
   
 
-  <FooterComp/>
+  <FooterComp />
 
 </div>
 
@@ -39,32 +36,18 @@ export default {
   data(){
     
     return{
-      
-      posts: null
     }
 
   },
 
   methods:{
 
-    getApi(){
-
-        axios.get('/api/posts')
-        .then(response =>{
-
-          this.posts = response.data;
-
-        })
-
-      // console.log('api');
-    }
 
   },
 
   mounted() {
     
-    this.getApi();
-    // console.log(axios);
+    
 
   },
 }
